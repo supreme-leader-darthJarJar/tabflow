@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TabFlow</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <input type="text" id="searchInput" placeholder="Search tabs...">
+      <div class="header-buttons">
+        <button id="saveSession">Save Session</button>
+        <button id="toggleTheme">🌙</button>
+        <button id="settingsButton">⚙️</button>
+      </div>
+    </div>
+    
+    <div class="controls">
+      <!-- Session Controls -->
+      <div class="session-controls">
+        <div class="sort-dropdown">
+          <select id="sessionSort">
+            <option value="name">Name (A-Z)</option>
+            <option value="date">Date Created</option>
+            <option value="tabCount">Number of Tabs</option>
+          </select>
+        </div>
+        <div class="filter-dropdown">
+          <select id="sessionFilter">
+            <option value="all">All Sessions</option>
+            <option value="today">Today</option>
+            <option value="week">This Week</option>
+            <option value="month">This Month</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    
+    <div class="tabs-container">
+      <h2>Current Tabs</h2>
+      <div id="currentTabs" class="tabs-list"></div>
+    </div>
+    <div id="settingsMenu" class="settings-menu hidden">
+        <h2>Settings</h2>
+        <div class="setting-item">
+            <label>
+                <input type="checkbox" id="autoSaveEnabled">
+                Enable Auto-Save
+            </label>
+        </div>
+        <div class="setting-item">
+            <label>
+                Auto-Save interval:
+                <select id="autoSaveInterval">
+                    <option value="1">1 minute</option>
+                    <option value="5">5 minutes</option>
+                    <option value="15">15 minutes</option>
+                    <option value="30">30 minutes</option>
+                    <option value="60">1 hour</option>
+                </select>
+            </label>
+        </div>
+        <button id="closeSettings">Close</button>
+    </div>
+    <div class="sessions-container">
+      <h2>Saved Sessions</h2>
+      <div id="savedSessions" class="sessions-list"></div>
+    </div>
+    <div id="donate-section">
+      <p>Love TabFlow? Consider supporting its development!</p>
+      <a href="https://ko-fi.com/kevingreene" target="_blank" id="donate-button">Donate</a>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
